@@ -4,9 +4,9 @@ services:
   app:
     build: .
     volumes:
-      - /steamcmd/rust:/steamcmd/rust
-      - /usr/share/nginx/html:/usr/share/nginx/html
-      - /var/log/nginx:/var/log/nginx
+      - c:/rustdkr/steamcmd/rust:/steamcmd/rust
+      - c:/rustdkr/usr/share/nginx/html:/usr/share/nginx/html
+      - c:/rustdkr/var/log/nginx:/var/log/nginx
     ports:
       - "80:80"
       - "28080:28080"

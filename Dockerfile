@@ -85,16 +85,24 @@ ENV PGID 1000
 ENV PUID 1000
 
 # Expose necessary ports
-EXPOSE 8080
-EXPOSE 28015
-EXPOSE 28016
-EXPOSE 28082
+EXPOSE 8080/tcp
+EXPOSE 28080/tcp
+EXPOSE 28081/tcp
+EXPOSE 28082/tcp
+EXPOSE 28083/tcp
+
+EXPOSE 8080/udp
+EXPOSE 28080/udp
+EXPOSE 28081/udp
+EXPOSE 28082/udp
+EXPOSE 28083/udp
 
 # Define directories to take ownership of
 ENV CHOWN_DIRS "/app,/steamcmd,/usr/share/nginx/html,/var/log/nginx"
 
 # Expose the volumes
 # VOLUME [ "/steamcmd/rust" ]
+# VOLUME [ "/app" ]
 
 # Start the server
 CMD [ "bash", "/app/start.sh"]

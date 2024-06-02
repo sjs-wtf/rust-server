@@ -1,0 +1,13 @@
+POWERSHELL:
+
+New-Item -ItemType Directory -Force -Path "c:\rustdkr\steamcmd\rust"
+New-Item -ItemType Directory -Force -Path "c:\rustdkr\usr\share\nginx\html"
+New-Item -ItemType Directory -Force -Path "c:\rustdkr\var\log\nginx"
+New-Item -ItemType Directory -Force -Path "c:\rustdkr\app"
+
+CMD:
+
+mkdir c:\rustdkr\steamcmd\rust
+mkdir c:\rustdkr\usr\share\nginx\html
+mkdir c:\rustdkr\var\log\nginx
+mkdir c:\rustdkr\app
