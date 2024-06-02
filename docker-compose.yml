@@ -8,10 +8,15 @@ services:
       - c:/rustdkr/usr/share/nginx/html:/usr/share/nginx/html
       - c:/rustdkr/var/log/nginx:/var/log/nginx
     ports:
-      - "80:80"
-      - "28080:28080"
-      - "28081:28081"
-      - "28082:28082"
-      - "28083:28083"
+      - "80:80/tcp"
+      - "80:80/udp"
+      - "28080:28080/tcp"
+      - "28080:28080/udp"
+      - "28081:28081/tcp"
+      - "28081:28081/udp"
+      - "28082:28082/tcp"
+      - "28082:28082/udp"
+      - "28083:28083/tcp"
+      - "28083:28083/udp"
     env_file:
       - .env
