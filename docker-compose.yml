@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - /steamcmd/rust:/steamcmd/rust
+      - /usr/share/nginx/html:/usr/share/nginx/html
+      - /var/log/nginx:/var/log/nginx
+    ports:
+      - "80:80"
+      - "28080:28080"
+      - "28081:28081"
+      - "28082:28082"
+      - "28083:28083"
+    env_file:
+      - .env
