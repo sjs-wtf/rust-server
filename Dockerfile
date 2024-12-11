@@ -30,7 +30,7 @@ RUN curl -sL https://github.com/Facepunch/webrcon/archive/24b0898d86706723d52bb4
 ADD fix_conn.sh /tmp/fix_conn.sh
 
 # Create the volume directories
-RUN mkdir -p /steamcmd/rust /usr/share/nginx/html /var/log/nginx
+RUN mkdir -p /data/steamcmd/rust /data/usr/share/nginx/html /data/var/log/nginx
 
 # Setup proper shutdown support
 ADD shutdown_app/ /app/shutdown_app/
@@ -75,30 +75,16 @@ WORKDIR /
 
 # Fix permissions
 RUN chown -R 1000:1000 \
-    /steamcmd \
-    /app \
-    /usr/share/nginx/html \
-    /var/log/nginx
+    /data/steamcmd \
+    /data/usr/share/nginx/html \
+    /data/var/log/nginx
 
 # Run as a non-root user by default
 ENV PGID 1000
 ENV PUID 1000
 
-# Expose necessary ports
-EXPOSE 8080/tcp
-EXPOSE 28080/tcp
-EXPOSE 28081/tcp
-EXPOSE 28082/tcp
-EXPOSE 28083/tcp
-
-EXPOSE 8080/udp
-EXPOSE 28080/udp
-EXPOSE 28081/udp
-EXPOSE 28082/udp
-EXPOSE 28083/udp
-
 # Define directories to take ownership of
-ENV CHOWN_DIRS "/app,/steamcmd,/usr/share/nginx/html,/var/log/nginx"
+ENV CHOWN_DIRS "/data"
 
 # Expose the volumes
 # VOLUME [ "/steamcmd/rust" ]

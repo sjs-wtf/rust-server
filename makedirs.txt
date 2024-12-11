@@ -11,3 +11,11 @@ mkdir c:\rustdkr\steamcmd\rust
 mkdir c:\rustdkr\usr\share\nginx\html
 mkdir c:\rustdkr\var\log\nginx
 mkdir c:\rustdkr\app
+
+
+mkdir c:\rustdkr2\steamcmd\rust\steamcmd\rust
+mkdir c:\rustdkr2\usr\share\nginx\html\usr\share\nginx\html
+mkdir c:\rustdkr2\var\log\nginx\var\log\nginx
+mkdir c:\rustdkr1\steamcmd\rust\steamcmd\rust
+mkdir c:\rustdkr1\usr\share\nginx\html\usr\share\nginx\html
+mkdir c:\rustdkr1\var\log\nginx\var\log\nginx

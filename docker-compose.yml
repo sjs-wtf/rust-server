@@ -1,12 +1,10 @@
 version: '3.8'
 
 services:
-  app:
+  rustdkr1:
     build: .
     volumes:
-      - c:/rustdkr/steamcmd/rust:/steamcmd/rust
-      - c:/rustdkr/usr/share/nginx/html:/usr/share/nginx/html
-      - c:/rustdkr/var/log/nginx:/var/log/nginx
+      - c:/rustdkr1:/data
     ports:
       - "80:80/tcp"
       - "80:80/udp"
@@ -19,4 +17,21 @@ services:
       - "28083:28083/tcp"
       - "28083:28083/udp"
     env_file:
-      - .env
+      - server1.env
+#  rustdkr2:
+#    build: .
+#    volumes:
+#      - c:/rustdkr2:/data
+#    ports:
+#      - "8080:8080/tcp"
+#      - "8080:8080/udp"
+#      - "28090:28090/tcp"
+#      - "28090:28090/udp"
+#      - "28091:28091/tcp"
+#      - "28091:28091/udp"
+#      - "28092:28092/tcp"
+#      - "28092:28092/udp"
+#      - "28093:28093/tcp"
+#      - "28093:28093/udp"
+#    env_file:
+#      - server2.env
